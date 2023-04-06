@@ -7,13 +7,14 @@ import ResultItem from "../ResultItem/ResultItem";
 
 type Props = {
   users: User[];
+  visible: boolean;
 };
 
-const ResultBox = ({ users }: Props) => {
+const ResultBox = ({ users, visible }: Props) => {
   return (
     <ul
       className={`${styles.resultBox} ${
-        users.length < 1 ? styles.transparent : ""
+        users.length < 1 || visible ? styles.transparent : ""
       }`}
     >
       {users.map((user) => {

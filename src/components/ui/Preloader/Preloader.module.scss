@@ -1,0 +1,20 @@
+@import "../../../styles/vars.scss";
+
+.preloader {
+  @extend %transition-all;
+  position: absolute;
+  top: 150px;
+  display: none;
+  opacity: 0;
+}
+
+.visible {
+  display: block;  
+  opacity: 1;
+}
+
+@media (max-width:760px) {
+  .preloader {
+    top: 100px;
+  }
+}
