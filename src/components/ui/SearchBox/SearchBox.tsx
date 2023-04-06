@@ -11,7 +11,7 @@ const SearchBox = ({ inputHandler }: Props) => {
     <input
       className={styles.searchBox}
       type="text"
-      placeholder="SteamID or nickname"
+      placeholder="Nickname"
       value={inputValue}
       onChange={(e) => {
         setInputValue(e.target.value);

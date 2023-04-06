@@ -1,5 +1,16 @@
 @import "../../../styles/vars.scss";
 
+.link {
+  color: $text;
+  display: block;
+  text-decoration: none;
+  &:last-of-type {
+    & .resultItem {
+      border-bottom: 0;
+    }    
+  }
+}
+
 .resultItem {
   @extend %transition-bg;
   display: flex;
@@ -8,10 +19,7 @@
   border-bottom: 1px solid $border;
   padding: 10px;
   background-color: $grey;
-  cursor: pointer;
-  &:last-of-type {
-    border-bottom: 0;
-  }
+  cursor: pointer;  
   &:hover {
     background-color: $grey-hover;
   }
@@ -26,6 +34,10 @@
       font-size: 20px;
     }  
   }
+}
+
+.link {
+
 }
 
 .lastMatch {
