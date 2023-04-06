@@ -1,0 +1,28 @@
+@import "../../../styles/vars.scss";
+
+.searchButton {
+  @extend %focus;
+  @extend %transition-bg;
+  width: 100px;
+  height: 40px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 20px;
+  background: $blue;
+  font-size: 20px;
+  color: $text;
+  cursor: pointer;
+  &:hover {
+    background: $blue-hover;
+  }
+  &:active {    
+    transform: scale(0.97);
+  }
+}
+
+@media (max-width:760px) {
+  .searchButton {
+    width: 70px;
+    font-size: 1rem;
+  }
+}

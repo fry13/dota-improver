@@ -1,0 +1,64 @@
+@import "../../../styles/vars.scss";
+
+.resultItem {
+  @extend %transition-bg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $border;
+  padding: 10px;
+  background-color: $grey;
+  cursor: pointer;
+  &:last-of-type {
+    border-bottom: 0;
+  }
+  &:hover {
+    background-color: $grey-hover;
+  }
+  & div {
+    display: flex;
+    align-items: center;
+    & img {
+      border-radius: 5px;
+    }
+    & p {
+      margin-left: 10px;
+      font-size: 20px;
+    }  
+  }
+}
+
+.lastMatch {
+  font-size: 12px;
+  color: rgba(255, 255, 255, .5);
+}
+
+@media (max-width:760px) {
+  .resultItem {    
+    & div {      
+      & p {
+        font-size: 1rem;
+      }  
+    }
+  }
+}
+
+@media (max-width:560px) {
+  .resultItem {    
+    & div {      
+      & img {
+        width: 32px;
+        height: 32px;
+      }
+      & p {
+        max-width: 220px;
+        overflow: hidden;
+        text-overflow: "...";
+      }
+    }
+  }
+
+  .lastMatch {
+    display: none;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../styles/vars.scss";
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.requestContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .requestContainer {
+    margin-top: 0px;
+  }
+  
+}

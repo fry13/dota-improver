@@ -1,0 +1,22 @@
+@import "../../../styles/vars.scss";
+
+.resultBox {
+  @extend %transition-all;
+  border: 1px solid $border;
+  margin-top: 10px;
+  max-height: 600px;
+  overflow: scroll;
+  width: 950px;
+  list-style: none;
+  border-radius: 20px;
+}
+
+.transparent {
+  opacity: 0;
+}
+
+@media (max-width:1000px) {
+  .resultBox {
+    width: 100%;
+  }
+}
