@@ -1,0 +1,50 @@
+$bg: #23272f;
+$block-bg: #16181d;
+$block-hl: #1a1c22;
+$text: rgba(255, 255, 255, .85);
+$border: rgba(255, 255, 255, .15);
+
+$grey: #343944;
+$grey-hover: rgba(#343944, .8);
+$red: #DF6A6A;
+$red-hover: rgba(#DF6A6A, .8);
+$green: #70AF85;
+$green-hover: rgba(#70AF85, .8);
+$blue: #6096B4;
+$blue-hover: rgba(#6096B4, .8);
+
+%container {
+  width: 1600px;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+%main-section {
+  flex-grow: 2;
+}
+
+%focus {
+  &:focus {    
+    outline: 2px solid $text;
+  }
+}
+
+%transition-bg {
+  transition: background .1s ease-in-out;
+}
+
+%transition-all {
+  transition: all .5s ease-in-out;
+}
+
+%block {
+  border-radius: 10px;
+  background-image: linear-gradient($block-hl, $block-bg);
+}
+
+@media (max-width:1640px) {
+  %container {
+    max-width: calc(100% - 40px);
+    padding: 0 20px;
+  }
+}
