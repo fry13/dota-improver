@@ -1,0 +1,10 @@
+@import "../../../styles/vars.scss";
+
+.footer {
+  @extend %container;
+  height: 30px;
+  max-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

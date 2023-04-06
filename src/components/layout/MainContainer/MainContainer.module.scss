@@ -1,0 +1,9 @@
+@import "../../../styles/vars.scss";
+
+.mainContainer {
+  @extend %container;
+  @extend %main-section;
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+}

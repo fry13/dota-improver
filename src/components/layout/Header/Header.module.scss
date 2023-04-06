@@ -1,0 +1,9 @@
+@import "../../../styles/vars.scss";
+
+.header {
+  @extend %container;
+  height: 80px;
+  max-height: 80px;
+  display: flex;
+  align-items: center;
+}
