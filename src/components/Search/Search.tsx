@@ -18,7 +18,7 @@ const Search = () => {
     }
   };
 
-  const buttonHandler = () => {
+  const submitHandler = () => {
     getUsers(searchRequest);
   };
 
@@ -27,10 +27,15 @@ const Search = () => {
   };
 
   return (
-    <form className={styles.search}>
+    <form
+      className={styles.search}
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <div className={styles.requestContainer}>
         <SearchBox inputHandler={inputHandler} />
-        <SearchButton buttonHandler={buttonHandler} />
+        <SearchButton submitHandler={submitHandler} />
       </div>
       <ResultBox users={users} />
     </form>

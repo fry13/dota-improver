@@ -2,15 +2,15 @@ import Image from "next/image";
 import styles from "./SearchButton.module.scss";
 
 type Props = {
-  buttonHandler: Function;
+  submitHandler: Function;
 };
 
-const SearchButton = ({ buttonHandler }: Props) => {
+const SearchButton = ({ submitHandler }: Props) => {
   return (
     <button
       className={styles.searchButton}
-      type="button"
-      onClick={() => buttonHandler()}
+      type="submit"
+      onClick={() => submitHandler()}
     >
       Search
     </button>
