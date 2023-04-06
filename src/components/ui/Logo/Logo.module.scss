@@ -1,0 +1,21 @@
+@import "../../../styles/vars.scss";
+
+.logo {
+  @extend %transition-bg;
+  font-size: 24px;
+  text-decoration: none;
+  color: $text;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 10px;
+  &:hover {    
+    background-color: $blue;
+  }
+}
+
+@media (max-width:760px) {
+  .logo {
+    font-size: 18px;
+  }
+  
+}
