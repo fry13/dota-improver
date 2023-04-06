@@ -6,7 +6,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "avatars.akamai.steamstatic.com",
-        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "steamcdn-a.akamaihd.net",
       },
     ],
   },
