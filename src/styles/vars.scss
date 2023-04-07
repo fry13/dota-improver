@@ -39,7 +39,8 @@ $blue-hover: rgba(#6096B4, .8);
 
 %block {
   border-radius: 10px;
-  background-image: linear-gradient($block-hl, $block-bg);
+  background-color: $grey;
+  padding: 10px;
 }
 
 @media (max-width:1640px) {

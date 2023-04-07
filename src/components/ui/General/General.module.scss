@@ -1,0 +1,19 @@
+@import "../../../styles/vars.scss";
+
+.general {
+  @extend %block;
+  width: 500px;
+  & div:first-child {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.avatar {
+  border-radius: 10px;
+}
+
+.name {
+  font-size: 2rem;
+  margin-left: 10px;
+}

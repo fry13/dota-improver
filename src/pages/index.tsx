@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "@/components/layout/Layout/Layout";
-import Search from "@/components/Search/Search";
+import Search from "@/components/ui/Search/Search";
 
 export default function Home() {
   return (
