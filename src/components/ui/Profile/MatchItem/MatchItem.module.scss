@@ -1,0 +1,64 @@
+@import "../../../../styles/vars.scss";
+
+.link {
+  color: $text;
+  display: block;
+  text-decoration: none;
+  &:last-of-type {
+    & .matchItem {
+      border-bottom: 0;
+    }    
+  }
+}
+
+.matchItem {
+  @extend %transition-bg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $border;
+  padding: 10px;
+  //background-color: $grey;
+  cursor: pointer;  
+  &:hover {
+    background-color: $grey-hover;
+  }
+  & div {
+    display: flex;
+    align-items: center;
+    & img {
+      border-radius: 5px;
+    }
+    & p {
+      margin-left: 10px;
+      font-size: 20px;
+    }  
+  }
+}
+
+.lastMatch {
+  font-size: 12px;
+  color: rgba(255, 255, 255, .5);
+}
+
+.win {
+  background-color: rgba($green, 1);
+}
+
+.lose {
+  background-color: rgba($red, 1);
+}
+
+@media (max-width:760px) {
+  .resultItem {    
+    & div {      
+      & p {
+        font-size: 1rem;
+      }  
+    }
+  }
+}
+
+@media (max-width:560px) {
+
+}

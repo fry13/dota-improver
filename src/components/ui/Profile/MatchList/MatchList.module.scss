@@ -1,0 +1,9 @@
+@import "../../../../styles/vars.scss";
+
+.matchList {
+  @extend %transition-all;
+  height: 360px;
+  overflow: scroll;
+  list-style: none;
+  border-radius: 20px;
+}
