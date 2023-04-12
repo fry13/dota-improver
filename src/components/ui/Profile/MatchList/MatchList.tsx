@@ -10,8 +10,6 @@ type Props = {
 };
 
 const MatchList = ({ matches }: Props) => {
-  console.log(matches[1].player_slot);
-  console.log(("00000000" + matches[1].player_slot.toString(2)).slice(-8));
   return (
     <ul className={styles.matchList}>
       {matches.map((match) => {
