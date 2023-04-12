@@ -37,12 +37,6 @@ $blue-hover: rgba(#6096B4, .8);
   transition: all .5s ease-in-out;
 }
 
-%block {
-  border-radius: 10px;
-  background-color: $grey;
-  padding: 10px;
-}
-
 @media (max-width:1640px) {
   %container {
     max-width: calc(100% - 40px);
