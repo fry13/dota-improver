@@ -18,11 +18,7 @@
   align-items: center;
   border-bottom: 1px solid $border;
   padding: 10px;
-  //background-color: $grey;
-  cursor: pointer;  
-  &:hover {
-    background-color: $grey-hover;
-  }
+  cursor: pointer;
   & div {
     display: flex;
     align-items: center;
@@ -42,11 +38,17 @@
 }
 
 .win {
-  background-color: rgba($green, 1);
+  background-color: $green;
+  &:hover {
+    background-color: $green-hover;
+  }
 }
 
 .lose {
-  background-color: rgba($red, 1);
+  background-color: $red;
+  &:hover {
+    background-color: $red-hover;
+  }
 }
 
 @media (max-width:760px) {
