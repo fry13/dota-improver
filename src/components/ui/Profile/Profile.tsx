@@ -1,17 +1,30 @@
 import Image from "next/image";
 import styles from "./Profile.module.scss";
-import { GeneralProfile, User } from "@/types";
-import General from "../General/General";
+import { GeneralProfile, Match, User } from "@/types";
+import General from "./General/General";
+import Block from "../Block/Block";
+import Matches from "./Matches/Matches";
 
 type Props = {
-  data: GeneralProfile;
+  profile: GeneralProfile;
+  matches: Match[];
 };
 
-const Profile = ({ data }: Props) => {
-  console.log(data);
+const Profile = ({ profile, matches }: Props) => {
   return (
     <div className={styles.profile}>
-      <General data={data} />
+      <Block area="profile" name="Profile">
+        <General data={profile} />
+      </Block>
+      <Block area="matches" name="Recent ranked matches">
+        <Matches data={matches} />
+      </Block>
+      <Block area="selected" name="Selected game">
+        <p>hi</p>
+        <p>hi</p>
+        <p>hi</p>
+        <p>hi</p>
+      </Block>
     </div>
   );
 };

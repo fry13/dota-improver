@@ -1,9 +1,9 @@
-import SearchBox from "../SearchBox/SearchBox";
-import SearchButton from "../SearchButton/SearchButton";
+import SearchBox from "./SearchBox/SearchBox";
+import SearchButton from "./SearchButton/SearchButton";
 import styles from "./Search.module.scss";
 import { User } from "../../../types";
 import { useState } from "react";
-import ResultBox from "../ResultBox/ResultBox";
+import ResultBox from "./ResultBox/ResultBox";
 import Preloader from "../Preloader/Preloader";
 const url = "https://api.opendota.com/api";
 

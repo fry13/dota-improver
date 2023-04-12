@@ -8,7 +8,7 @@ type Props = {
 
 const General = ({ data }: Props) => {
   return (
-    <section className={styles.general}>
+    <div className={styles.general}>
       <div>
         <p>{data.rank_tier}</p>
         <Image
@@ -20,7 +20,7 @@ const General = ({ data }: Props) => {
         ></Image>
         <p className={styles.name}>{data.profile.personaname}</p>
       </div>
-    </section>
+    </div>
   );
 };
 
