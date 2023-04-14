@@ -36,3 +36,11 @@ export type Match = {
   leaver_status: number,
   party_size: number
 }
+
+export type Hero = {
+  id: number,
+  localized_name: string,
+  primary_attr: string,
+  attack_type: string,
+  icon: string
+}
