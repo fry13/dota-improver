@@ -8,9 +8,10 @@ export type User = {
 
 type ShortProfile = {
   account_id: 0,
-  personaname: "string",
-  avatarfull: "string",
-  profileurl: "string"
+  steamid: string,
+  personaname: string,
+  avatarfull: string,
+  profileurl: string
 }
 
 export type GeneralProfile = {
