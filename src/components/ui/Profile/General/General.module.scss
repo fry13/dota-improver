@@ -1,11 +1,25 @@
 @import "../../../../styles/vars.scss";
 
 .general {
-  width: max-content;
   padding: 10px;
   & div:first-child {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    & div:last-child {
+      display: flex;
+      & img {
+        filter: grayscale(.9);
+        border-radius: 2px;     
+      }
+      & a {
+        margin-left: 10px;
+        transition: opacity .2s ease-in-out;
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
   }
 }
 
