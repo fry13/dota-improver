@@ -12,26 +12,21 @@
 }
 
 .matchItem {
-  @extend %transition-bg;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr repeat(3, 3fr);
   border-bottom: 1px solid $border;
-  padding: 10px;
+  padding: 10px 20px;
   cursor: pointer;
-  & div {
-    display: flex;
-    align-items: center;
-    & img {
-      border-radius: 5px;
+  & p {
+    text-align: center;
+    &:last-child {
+      text-align: end;
     }
-    & p {
-      margin-left: 10px;
-      font-size: 20px;
-    }  
-  }
+  }  
 }
 
 .win {
+  @extend %transition-bg;
   background-color: $green;
   &:hover {
     background-color: $green-hover;
@@ -39,6 +34,7 @@
 }
 
 .lose {
+  @extend %transition-bg;
   background-color: $red;
   &:hover {
     background-color: $red-hover;

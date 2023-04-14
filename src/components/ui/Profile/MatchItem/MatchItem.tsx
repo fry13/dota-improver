@@ -1,8 +1,9 @@
 import Image from "next/image";
 import styles from "./MatchItem.module.scss";
-import { Match } from "@/types";
+import { Hero, Match } from "@/types";
 import { heroes } from "@/heroes";
 import Link from "next/link";
+import { matchTimeCalc } from "@/utils";
 
 type Props = {
   match: Match;
@@ -18,14 +19,22 @@ const MatchItem = ({ match }: Props) => {
     (player_slot[0] === "1" && match.radiant_win === false)
   )
     win = true;
-  const hero = heroes.find((hero) => hero.id === match.hero_id);
+  
+  const hero:Hero = heroes.find((hero) => hero.id === match.hero_id) || heroes[0];
+  
+
   return (
     <Link
       className={`${styles.link} ${win ? styles.win : styles.lose}`}
       href={"#"}
     >
       <li className={styles.matchItem}>
-        <p>{hero?.localized_name}</p>
+        <Image
+          src={hero.icon}
+          width={24}
+          height={24}
+          alt={hero.localized_name}
+        ></Image>
         <p>
           {match.kills}/{match.deaths}/{match.assists}
         </p>
@@ -34,6 +43,7 @@ const MatchItem = ({ match }: Props) => {
           {duration_min}:{duration_sec < 10 ? "0" : ""}
           {duration_sec}
         </p>
+        <p>{matchTimeCalc(match.start_time)}</p>
       </li>
     </Link>
   );
