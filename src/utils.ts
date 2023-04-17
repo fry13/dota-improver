@@ -1,3 +1,5 @@
+import { Match } from "./types";
+
 export function lastMatchCalc(date: string) {
   const dateDiff = Math.floor(
     (new Date().getTime() - new Date(date).getTime()) / (1000 * 60 * 60 * 24)
@@ -10,4 +12,15 @@ export function lastMatchCalc(date: string) {
 export function matchTimeCalc(date: number) {
   const realTime = new Date(date*1000);
   return `${realTime.getDate()}.${realTime.getMonth() < 10 ? "0" : ""}${realTime.getMonth()} ${realTime.getHours()}:${realTime.getMinutes() < 10 ? "0" : ""}${realTime.getMinutes()}`;
+}
+
+export function wlCalc (match: Match) {
+  const player_slot = ("00000000" + match.player_slot.toString(2)).slice(-8);
+  let win = false;
+  if (
+    (player_slot[0] === "0" && match.radiant_win) ||
+    (player_slot[0] === "1" && match.radiant_win === false)
+  )
+    win = true;
+  return win
 }
