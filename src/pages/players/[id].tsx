@@ -2,14 +2,14 @@ import Head from "next/head";
 import Layout from "@/components/layout/Layout/Layout";
 import Profile from "@/components/ui/Profile/Profile";
 import { useRouter } from "next/router";
-import { GeneralProfile, Match, User, Winrate } from "@/types";
+import { GeneralProfile, Match, User, WinLose } from "@/types";
 import { GetServerSideProps } from "next/types";
 const url = "https://api.opendota.com/api";
 
 type Props = {
   profile: GeneralProfile;
   matches: Match[];
-  wl: Winrate;
+  wl: WinLose;
 };
 
 export default function ProfilePage({ profile, matches, wl }: Props) {
