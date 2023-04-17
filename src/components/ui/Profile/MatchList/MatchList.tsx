@@ -1,8 +1,5 @@
-import { useState } from "react";
-import Image from "next/image";
 import styles from "./MatchList.module.scss";
 import { Match } from "@/types";
-import lastMatchCalc from "@/utils";
 import MatchItem from "../MatchItem/MatchItem";
 
 type Props = {
