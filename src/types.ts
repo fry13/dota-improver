@@ -45,3 +45,15 @@ export type Hero = {
   attack_type: string,
   icon: string
 }
+
+export type FavHero = {
+  id: number,
+  quantity: number,
+  w: number,
+  l: number
+};
+
+export type WinLose = {
+  win: number,
+  lose: number
+}
