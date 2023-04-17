@@ -1,0 +1,14 @@
+.socials {
+  display: flex;
+  & img {
+    filter: grayscale(.9);
+    border-radius: 2px;     
+  }
+  & a {
+    margin-left: 10px;
+    transition: opacity .2s ease-in-out;
+    &:hover {
+      opacity: .7;
+    }
+  }
+}

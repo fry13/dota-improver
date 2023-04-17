@@ -1,17 +1,22 @@
 import Image from "next/image";
 import styles from "./General.module.scss";
-import { GeneralProfile } from "@/types";
+import { GeneralProfile, Match, WinLose } from "@/types";
 import Rank from "../Rank/Rank";
-import Link from "next/link";
+import Socials from "../Socials/Socials";
+import FavHeroes from "../FavHeroes/FavHeroes";
+import Winrate from "../Winrate/Winrate";
+import MiniBlock from "../../MiniBlock/MiniBlock";
 
 type Props = {
   data: GeneralProfile;
+  matches: Match[];
+  wl: WinLose;
 };
 
-const General = ({ data }: Props) => {
+const General = ({ data, matches, wl }: Props) => {
   return (
     <div className={styles.general}>
-      <div>
+      <div className={styles.header}>
         <div>
           <Rank rank={data.rank_tier} />
           <Image
@@ -23,32 +28,15 @@ const General = ({ data }: Props) => {
           ></Image>
           <p className={styles.name}>{data.profile.personaname}</p>
         </div>
-        <div>
-          <Link
-            href={`https://www.dotabuff.com/players/${data.profile.account_id}`}
-            passHref
-            target="_blank"
-          >
-            <Image
-              src="/icons/dotabuff.ico"
-              width={18}
-              height={18}
-              alt="Dotabuff profile"
-            />
-          </Link>
-          <Link
-            href={`https://steamcommunity.com/profiles/${data.profile.steamid}`}
-            passHref
-            target="_blank"
-          >
-            <Image
-              src="/icons/steam.ico"
-              width={18}
-              height={18}
-              alt="Steam profile"
-            />
-          </Link>
-        </div>
+        <Socials id={data.profile.steamid} />
+      </div>
+      <div className={styles.bottom}>
+        <MiniBlock name="Favorite heroes">
+          <FavHeroes matches={matches} />
+        </MiniBlock>
+        <MiniBlock name="Winrate">
+          <Winrate matches={matches} wl={wl} />
+        </MiniBlock>
       </div>
     </div>
   );

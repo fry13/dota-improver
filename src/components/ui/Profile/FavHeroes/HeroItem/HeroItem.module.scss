@@ -1,0 +1,27 @@
+@import "../../../../../styles/vars.scss";
+
+.heroItem {
+  display: grid;
+  grid-template-columns: 40px repeat(2, 1fr);
+  align-items: center;
+  //gap: 10px;
+  list-style: none;
+  padding: 5px 0;
+  & img {
+    //margin-right: 20px;
+  }
+  & p {
+    //margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.win {
+  color: $green;
+}
+
+.lose {
+  color: $red;
+}

@@ -2,16 +2,17 @@ import Head from "next/head";
 import Layout from "@/components/layout/Layout/Layout";
 import Profile from "@/components/ui/Profile/Profile";
 import { useRouter } from "next/router";
-import { GeneralProfile, Match, User } from "@/types";
+import { GeneralProfile, Match, User, Winrate } from "@/types";
 import { GetServerSideProps } from "next/types";
 const url = "https://api.opendota.com/api";
 
 type Props = {
   profile: GeneralProfile;
   matches: Match[];
+  wl: Winrate;
 };
 
-export default function ProfilePage({ profile, matches }: Props) {
+export default function ProfilePage({ profile, matches, wl }: Props) {
   return (
     <>
       <Head>
@@ -21,7 +22,7 @@ export default function ProfilePage({ profile, matches }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Profile profile={profile} matches={matches} />
+        <Profile profile={profile} matches={matches} wl={wl} />
       </Layout>
     </>
   );
@@ -29,13 +30,15 @@ export default function ProfilePage({ profile, matches }: Props) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
-  const [profileRes, matchesRes] = await Promise.all([
+  const [profileRes, matchesRes, wlRes] = await Promise.all([
     fetch(`${url}/players/${id}`),
-    fetch(`${url}/players/${id}/matches?limit=25&lobby_type=7`),
+    fetch(`${url}/players/${id}/matches?limit=30&lobby_type=7`),
+    fetch(`${url}/players/${id}/wl?lobby_type=7`),
   ]);
-  const [profile, matches] = await Promise.all([
+  const [profile, matches, wl] = await Promise.all([
     profileRes.json(),
     matchesRes.json(),
+    wlRes.json(),
   ]);
-  return { props: { profile, matches } };
+  return { props: { profile, matches, wl } };
 };

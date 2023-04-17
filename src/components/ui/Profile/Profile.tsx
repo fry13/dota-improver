@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./Profile.module.scss";
-import { GeneralProfile, Match, User } from "@/types";
+import { GeneralProfile, Match, User, WinLose} from "@/types";
 import General from "./General/General";
 import Block from "../Block/Block";
 import Matches from "./Matches/Matches";
@@ -8,13 +8,14 @@ import Matches from "./Matches/Matches";
 type Props = {
   profile: GeneralProfile;
   matches: Match[];
+  wl: WinLose
 };
 
-const Profile = ({ profile, matches }: Props) => {
+const Profile = ({ profile, matches, wl }: Props) => {
   return (
     <div className={styles.profile}>
       <Block area="profile" name="Profile">
-        <General data={profile} />
+        <General data={ profile } matches={matches} wl={wl} />
       </Block>
       <Block area="matches" name="Recent ranked matches">
         <Matches data={matches} />
