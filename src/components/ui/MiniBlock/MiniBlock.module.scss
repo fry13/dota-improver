@@ -1,0 +1,20 @@
+@import "../../../styles/vars.scss";
+
+.container {
+  //width: 100%;
+}
+
+.name {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0 0 5px 5px;
+}
+
+.miniBlock {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgba($bg, .3);
+  height: calc(100% - 65px);
+}
