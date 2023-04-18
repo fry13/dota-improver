@@ -32,7 +32,6 @@ const Search = () => {
 
   return (
     <form
-      netlify
       className={styles.search}
       onSubmit={(e) => {
         e.preventDefault();
