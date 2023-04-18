@@ -15,7 +15,7 @@ const Socials = ({ id }: Props) => {
         target="_blank"
       >
         <Image
-          src="/icons/dotabuff.ico"
+          src="/icons/dotabuff.png"
           width={18}
           height={18}
           alt="Dotabuff profile"
@@ -28,7 +28,7 @@ const Socials = ({ id }: Props) => {
         target="_blank"
       >
         <Image
-          src="/icons/steam.ico"
+          src="/icons/steam.png"
           width={18}
           height={18}
           alt="Steam profile"
