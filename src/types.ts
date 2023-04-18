@@ -3,11 +3,11 @@ export type User = {
   avatarfull: string,
   personaname: string,
   last_match_time: string,
-  similarity: 0
+  similarity: number
 };
 
 type ShortProfile = {
-  account_id: 0,
+  account_id: number,
   steamid: string,
   personaname: string,
   avatarfull: string,
