@@ -7,7 +7,7 @@ type Props = {
   name: string;
 };
 
-const Block = ({ children, name }: Props) => {
+const MiniBlock = ({ children, name }: Props) => {
   return (
     <div className={styles.container}>
       <h3 className={styles.name}>{name}</h3>
@@ -16,4 +16,4 @@ const Block = ({ children, name }: Props) => {
   );
 };
 
-export default Block;
+export default MiniBlock;

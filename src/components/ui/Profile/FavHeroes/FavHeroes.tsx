@@ -30,13 +30,11 @@ const FavHeroes = ({ matches }: Props) => {
     })
     .slice(0, 3);
   return (
-    <div className={styles.favHeroes}>
-      <ul>
-        {favHeroes.map((hero) => {
-          return <HeroItem key={hero.id} favHero={hero} />;
-        })}
-      </ul>
-    </div>
+    <ul className={styles.favHeroes}>
+      {favHeroes.map((hero) => {
+        return <HeroItem key={hero.id} favHero={hero} />;
+      })}
+    </ul>
   );
 };
 

@@ -2,7 +2,8 @@
 
 .link {
   color: $text;
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 3fr);
   text-decoration: none;
   &:last-of-type {
     & .matchItem {
@@ -12,8 +13,6 @@
 }
 
 .matchItem {
-  display: grid;
-  grid-template-columns: 1fr repeat(3, 3fr);
   border-bottom: 1px solid $border;
   padding: 10px 20px;
   cursor: pointer;

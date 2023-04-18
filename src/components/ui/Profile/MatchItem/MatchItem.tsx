@@ -16,11 +16,12 @@ const MatchItem = ({ match }: Props) => {
     heroes.find((hero) => hero.id === match.hero_id) || heroes[0];
 
   return (
-    <Link
-      className={`${styles.link} ${wlCalc(match) ? styles.win : styles.lose}`}
-      href={"#"}
+    <li
+      className={`${styles.matchItem}  ${
+        wlCalc(match) ? styles.win : styles.lose
+      }`}
     >
-      <li className={styles.matchItem}>
+      <Link className={`${styles.link}`} href={"#"}>
         <Image
           src={hero.icon}
           width={24}
@@ -36,8 +37,8 @@ const MatchItem = ({ match }: Props) => {
           {duration_sec}
         </p>
         <p>{matchTimeCalc(match.start_time)}</p>
-      </li>
-    </Link>
+      </Link>
+    </li>
   );
 };
 
