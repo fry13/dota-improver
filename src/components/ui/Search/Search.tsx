@@ -17,7 +17,11 @@ const Search = () => {
       setPreloader(true);
       const res = await fetch(`${url}/search?q=${request}`);
       const data: User[] = await res.json();
-      setUsers(data);
+      let filteredData: User[] = [];
+      data.forEach((user) => {
+        if (user.last_match_time) filteredData.push(user);
+      });
+      setUsers(filteredData);
       setPreloader(false);
     }
   };

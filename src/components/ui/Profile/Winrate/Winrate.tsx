@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./Winrate.module.scss";
 import { FavHero, Match, WinLose } from "@/types";
 import { wlCalc } from "@/utils";
+import { useEffect, useState } from "react";
 
 type Props = {
   matches: Match[];
@@ -9,17 +10,21 @@ type Props = {
 };
 
 const Winrate = ({ matches, wl }: Props) => {
-  const allTimeWinrate = parseInt(
-    ((wl.win / (wl.win + wl.lose)) * 100).toFixed(1)
-  );
-  let lastWins = 0;
+  const [allTimeWinrate, setAllTimeWinrate] = useState(0);
+  const [lastMatchesWinrate, setLastMatchesWinrate] = useState(0);
+  useEffect(() => {
+    let lastWins = 0;
+    matches.forEach((match) => {
+      if (wlCalc(match)) lastWins += 1;
+    });
+    setAllTimeWinrate(
+      parseInt(((wl.win / (wl.win + wl.lose)) * 100).toFixed(1))
+    );
+    setLastMatchesWinrate(
+      parseInt(((lastWins / (matches.length + 1)) * 100).toFixed(1))
+    );
+  }, [matches, wl]);
 
-  matches.forEach((match) => {
-    if (wlCalc(match)) lastWins += 1;
-  });
-  const lastMatchesWinrate = parseInt(
-    ((lastWins / (matches.length + 1)) * 100).toFixed(1)
-  );
   return (
     <div className={styles.winrate}>
       <p>
