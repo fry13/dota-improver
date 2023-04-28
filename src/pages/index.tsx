@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>DotaImprover</title>
+        <title>Powershot</title>
         <meta name="description" content="Personal Dota helper" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

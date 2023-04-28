@@ -3,9 +3,11 @@ import styles from "./Logo.module.scss";
 
 const Logo = () => {
   return (
-    <Link href={"/"} className={styles.logo}>
-      DotaImprover
-    </Link>
+    <div className={styles.container}>
+      <Link href={"/"} className={styles.logo}>
+        Powershot
+      </Link>
+    </div>
   );
 };
 
