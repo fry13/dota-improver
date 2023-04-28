@@ -1,13 +1,14 @@
 import styles from "./MatchList.module.scss";
-import { Match } from "@/types";
+import { GeneralProfile, Match } from "@/types";
 import MatchItem from "../MatchItem/MatchItem";
 import { useEffect, useState } from "react";
 
 type Props = {
   matches: Match[];
+  profile: GeneralProfile
 };
 
-const MatchList = ({ matches }: Props) => {
+const MatchList = ({ matches, profile }: Props) => {
   const [lastMatches, setLastMatches] = useState<Match[]>([]);
   useEffect(() => {
     setLastMatches(matches);
@@ -16,7 +17,7 @@ const MatchList = ({ matches }: Props) => {
   return (
     <ul className={styles.matchList}>
       {lastMatches.map((match) => {
-        return <MatchItem key={match.match_id} match={match} />;
+        return <MatchItem key={match.match_id} profile={profile} match={match} />;
       })}
     </ul>
   );

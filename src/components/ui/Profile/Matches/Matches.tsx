@@ -2,15 +2,16 @@ import Image from "next/image";
 import styles from "./Matches.module.scss";
 import { ReactNode } from "react";
 import MatchList from "../MatchList/MatchList";
-import { Match } from "@/types";
+import { GeneralProfile, Match } from "@/types";
 
 type Props = {
   data: Match[];
+  profile: GeneralProfile
 };
 
-const Matches = ({ data }: Props) => {
+const Matches = ({ data, profile }: Props) => {
   return <div className={styles.matches}>
-    <MatchList matches={data} />
+    <MatchList profile={profile} matches={data} />
   </div>;
 };
 

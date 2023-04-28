@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Layout from "@/components/layout/Layout/Layout";
 import Profile from "@/components/ui/Profile/Profile";
-import { useRouter } from "next/router";
-import { GeneralProfile, Match, User, WinLose } from "@/types";
+import { GeneralProfile, Match, MatchDetails, WinLose } from "@/types";
 import { GetServerSideProps } from "next/types";
+import { useEffect, useState } from "react";
 const url = "https://api.opendota.com/api";
 
 type Props = {
@@ -13,16 +13,22 @@ type Props = {
 };
 
 export default function ProfilePage({ profile, matches, wl }: Props) {
+  
+  
   return (
     <>
       <Head>
-        <title>DotaImprover</title>
+        <title>Powershot</title>
         <meta name="description" content="Personal Dota helper" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Profile profile={profile} matches={matches} wl={wl} />
+        <Profile
+          profile={profile}
+          matches={matches}
+          wl={wl}
+        />
       </Layout>
     </>
   );
