@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 type Props = {
   matches: Match[];
   profile: GeneralProfile
+  clickHandler: Function
 };
 
-const MatchList = ({ matches, profile }: Props) => {
+const MatchList = ({ matches, profile, clickHandler }: Props) => {
   const [lastMatches, setLastMatches] = useState<Match[]>([]);
   useEffect(() => {
     setLastMatches(matches);
@@ -17,7 +18,7 @@ const MatchList = ({ matches, profile }: Props) => {
   return (
     <ul className={styles.matchList}>
       {lastMatches.map((match) => {
-        return <MatchItem key={match.match_id} profile={profile} match={match} />;
+        return <MatchItem key={match.match_id} profile={profile} match={match} clickHandler={clickHandler} />;
       })}
     </ul>
   );

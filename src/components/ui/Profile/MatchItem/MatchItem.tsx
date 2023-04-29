@@ -8,9 +8,10 @@ import { matchTimeCalc, wlCalc } from "@/utils";
 type Props = {
   match: Match;
   profile: GeneralProfile;
+  clickHandler: Function;
 };
 
-const MatchItem = ({ match, profile }: Props) => {
+const MatchItem = ({ match, profile, clickHandler }: Props) => {
   const duration_min = Math.floor(match.duration / 60);
   const duration_sec = match.duration - duration_min * 60;
   const hero: Hero =
@@ -22,7 +23,11 @@ const MatchItem = ({ match, profile }: Props) => {
         wlCalc(match) ? styles.win : styles.lose
       }`}
     >
-      <Link className={`${styles.link}`} href={url}>
+      <Link
+        className={`${styles.link}`}
+        href={url}
+        onClick={() => clickHandler(match.match_id)}
+      >
         <Image
           src={hero.icon}
           width={24}

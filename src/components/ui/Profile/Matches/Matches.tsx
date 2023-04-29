@@ -7,11 +7,12 @@ import { GeneralProfile, Match } from "@/types";
 type Props = {
   data: Match[];
   profile: GeneralProfile
+  clickHandler: Function
 };
 
-const Matches = ({ data, profile }: Props) => {
+const Matches = ({ data, profile, clickHandler }: Props) => {
   return <div className={styles.matches}>
-    <MatchList profile={profile} matches={data} />
+    <MatchList profile={profile} matches={data} clickHandler={clickHandler} />
   </div>;
 };
 
