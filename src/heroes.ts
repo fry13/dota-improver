@@ -312,7 +312,7 @@ export const heroes = [
     localized_name: "Templar Assassin",
     primary_attr: "agi",
     attack_type: "Ranged",
-    icon: "/heroes/teplar-assassin_icon.png"
+    icon: "/heroes/templar-assassin_icon.png"
 },
 {
     id: 47,
