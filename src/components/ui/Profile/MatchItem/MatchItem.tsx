@@ -3,7 +3,7 @@ import styles from "./MatchItem.module.scss";
 import { GeneralProfile, Hero, Match } from "@/types";
 import { heroes } from "@/heroes";
 import Link from "next/link";
-import { matchTimeCalc, wlCalc } from "@/utils";
+import { matchDurationCalc, matchTimeCalc, wlCalc } from "@/utils";
 
 type Props = {
   match: Match;
@@ -12,8 +12,6 @@ type Props = {
 };
 
 const MatchItem = ({ match, profile, clickHandler }: Props) => {
-  const duration_min = Math.floor(match.duration / 60);
-  const duration_sec = match.duration - duration_min * 60;
   const hero: Hero =
     heroes.find((hero) => hero.id === match.hero_id) || heroes[0];
   const url = `/players/${profile.profile.account_id}?match=${match.match_id}`;
@@ -37,11 +35,7 @@ const MatchItem = ({ match, profile, clickHandler }: Props) => {
         <p>
           {match.kills}/{match.deaths}/{match.assists}
         </p>
-        <p>
-          {duration_min < 10 ? "0" : ""}
-          {duration_min}:{duration_sec < 10 ? "0" : ""}
-          {duration_sec}
-        </p>
+        <p>{matchDurationCalc(match.duration)}</p>
         <p>{matchTimeCalc(match.start_time)}</p>
       </Link>
     </li>
