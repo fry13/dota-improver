@@ -5,6 +5,8 @@
   display: grid;
   grid-template-columns: 1fr repeat(3, 3fr);
   text-decoration: none;
+  align-items: center;
+  height: 40px;
   &:last-of-type {
     & .matchItem {
       border-bottom: 0;
@@ -14,7 +16,7 @@
 
 .matchItem {
   border-bottom: 1px solid $border;
-  padding: 10px 20px;
+  padding: 0 20px;
   cursor: pointer;
   & p {
     text-align: center;

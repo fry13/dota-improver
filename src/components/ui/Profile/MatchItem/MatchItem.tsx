@@ -28,8 +28,8 @@ const MatchItem = ({ match, profile, clickHandler }: Props) => {
       >
         <Image
           src={hero.icon}
-          width={24}
-          height={24}
+          width={28}
+          height={28}
           alt={hero.localized_name}
         />
         <p>
