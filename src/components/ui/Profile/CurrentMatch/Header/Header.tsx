@@ -24,12 +24,12 @@ const Header = ({ match, matchResult, radiant, dire }: Props) => {
           const hero = heroes.find((hero) => hero.id === player.hero_id);
           return (
             <Image
-              key={hero?.id}
-              src={hero.icon}
+              key={hero!.id}
+              src={hero!.icon}
               width={32}
               height={32}
-              title={hero.localized_name}
-              alt={hero.localized_name}
+              title={hero!.localized_name}
+              alt={hero!.localized_name}
             />
           );
         })}
@@ -38,12 +38,12 @@ const Header = ({ match, matchResult, radiant, dire }: Props) => {
           const hero = heroes.find((hero) => hero.id === player.hero_id);
           return (
             <Image
-              key={hero?.id}
-              src={hero.icon}
+              key={hero!.id}
+              src={hero!.icon}
               width={32}
               height={32}
-              title={hero.localized_name}
-              alt={hero.localized_name}
+              title={hero!.localized_name}
+              alt={hero!.localized_name}
             />
           );
         })}
