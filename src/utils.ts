@@ -30,3 +30,7 @@ export function matchDurationCalc (durationSec:number) {
   const duration_sec = durationSec - duration_min * 60;
   return `${duration_min < 10 ? "0" : ""}${duration_min}:${duration_sec < 10 ? "0" : ""}${duration_sec}`
 }
+
+export function copyToClipboard (text:string) {
+  navigator.clipboard.writeText(text)
+}
