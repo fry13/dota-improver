@@ -1,0 +1,22 @@
+@import "../../../../../styles/vars.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  & div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.heroName {
+  margin-left: 10px;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.kda {
+  font-size: 24px;
+}

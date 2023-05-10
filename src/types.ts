@@ -141,6 +141,7 @@ export type Player = {
   life_state: { },
   max_hero_hit: { },
   multi_kills: { },
+  net_worth: string,
   obs: { },
   obs_left_log: [],
   obs_log: [],

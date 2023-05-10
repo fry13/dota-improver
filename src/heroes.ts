@@ -200,7 +200,7 @@ export const heroes = [
     localized_name: "Witch Doctor",
     primary_attr: "int",
     attack_type: "Ranged",
-    icon: "/heroes/witch-doctor_icon.png"
+    icon: "/heroes/witch_doctor_icon.png"
 },
 {
     id: 31,
@@ -662,7 +662,7 @@ export const heroes = [
     localized_name: "Centaur Warrunner",
     primary_attr: "str",
     attack_type: "Melee",
-    icon: "/heroes/centaur_warrunner_icon.png"
+    icon: "/heroes/centaur_icon.png"
 },
 {
     id: 97,
