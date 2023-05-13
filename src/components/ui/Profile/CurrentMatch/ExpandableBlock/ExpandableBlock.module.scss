@@ -1,0 +1,41 @@
+@import "../../../../../styles/vars.scss";
+
+.wrapper{  
+  max-height: 40px;
+  border-radius: 10px;
+  padding: 5px;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+  background-color: rgba($bg, .3);
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.button {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: none;
+  border: none;
+  color: $text;
+  font-size: 32px;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.content {  
+}
+
+.expand {
+  max-height: 500px;
+}
+
