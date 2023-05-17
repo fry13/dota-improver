@@ -9,8 +9,7 @@ type Props = {
 
 const MainStats = ({ player }: Props) => {
   const hero: Hero =
-    heroes.find((hero) => hero.id === player?.hero_id) ?? heroes[0];
-  
+    heroes.find((hero) => hero.id === player.hero_id) ?? heroes[0];
 
   return (
     <>
@@ -35,7 +34,7 @@ const MainStats = ({ player }: Props) => {
         <p>Net worth: {player.net_worth}</p>
         <p>GPM: {player.gold_per_min}</p>
         <p>XPM: {player.xp_per_min}</p>
-        <p>Lasthits: {player.last_hits}</p>
+        <p>Last hits: {player.last_hits}</p>
         <p>Denies: {player.denies}</p>
       </div>
     </>
