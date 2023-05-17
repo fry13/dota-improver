@@ -209,5 +209,6 @@ export type Player = {
   actions_per_min: number,
   life_state_dead: number,
   rank_tier: number,
+  item_neutral: number,
   benchmarks: {  }
 }

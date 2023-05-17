@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./Table.module.scss";
 import { Hero, Player } from "@/types";
 import { heroes } from "@/heroes";
+import PlayerItems from "../PlayerItems/PlayerItems";
 
 type Props = {
   team: Player[];
@@ -53,7 +54,7 @@ const Table = ({ team }: Props) => {
                 <td className={styles.cell}>{player.hero_damage}</td>
                 <td className={styles.cell}>{player.hero_healing}</td>
                 <td className={styles.cell}>{player.tower_damage}</td>
-                <td className={styles.cell}>{player.item_0}</td>
+                <td className={styles.cell}><PlayerItems player={player} /></td>
               </tr>
             );
           })}
