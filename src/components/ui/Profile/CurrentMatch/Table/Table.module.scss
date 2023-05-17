@@ -1,0 +1,32 @@
+@import "../../../../../styles/vars.scss";
+
+
+.table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.row {
+  &:nth-of-type(odd) {
+    background-color: rgba($bg, .3);
+  }  
+}
+
+.cell {
+  //border: solid 1px $text;
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.sm {
+  width: 60px;
+}
+
+.md {
+  width: 80px;
+}
+
+.lg {
+  width: 120px;
+}
