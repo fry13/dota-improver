@@ -1,15 +1,17 @@
 @import "../../../styles/vars.scss";
 
 .logo {
-  @extend %transition-bg;
   font-size: 32px;
   text-decoration: none;
-  color: $text;
+  color: $bg;
   font-weight: 700;
   padding: 5px 10px;
   border-radius: 10px;
+  background-color: $text;
+  transition: all .5s ease-in-out;
   &:hover {    
     background-color: $blue;
+    color: $text;
   }
   
 }
