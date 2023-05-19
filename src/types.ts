@@ -212,3 +212,13 @@ export type Player = {
   item_neutral: number,
   benchmarks: {  }
 }
+
+export type Item = {
+  id: number,
+  img: string,
+  name: string,
+  cost: number | null,
+  cd: number | boolean,
+  charges: number | boolean,
+  tier?: number
+}
