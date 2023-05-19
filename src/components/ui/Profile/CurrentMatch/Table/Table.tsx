@@ -26,7 +26,7 @@ const Table = ({ team }: Props) => {
             <th className={styles.md} title="Damage to heroes">DMG</th>
             <th className={styles.md} title="Heal to heroes">HEAL</th>
             <th className={styles.md} title="Building damage">BLD</th>
-            <th title="Items at the end of the match">Items</th>
+            <th className={styles.lg} title="Items at the end of the match">Items</th>
           </tr>
         </thead>
         <tbody>
@@ -54,7 +54,7 @@ const Table = ({ team }: Props) => {
                 <td className={styles.cell}>{player.hero_damage}</td>
                 <td className={styles.cell}>{player.hero_healing}</td>
                 <td className={styles.cell}>{player.tower_damage}</td>
-                <td className={styles.cell}><PlayerItems player={player} /></td>
+                <td className={styles.itemsCell}><PlayerItems player={player} /></td>
               </tr>
             );
           })}

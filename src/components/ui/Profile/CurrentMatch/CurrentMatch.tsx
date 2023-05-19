@@ -53,7 +53,7 @@ const CurrentMatch = ({ user, currentMatchId }: Props) => {
           dire={dire}
         />
         <h4 className={styles.radiantTitle}>Radiant team</h4>
-        <Table team={radiant} />        
+        <Table team={radiant} />
         <h4 className={styles.direTitle}>Dire team</h4>
         <Table team={dire} />
         <ExpandableBlock title="Summary">

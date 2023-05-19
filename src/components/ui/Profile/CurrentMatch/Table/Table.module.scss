@@ -16,17 +16,20 @@
   //border: solid 1px $text;
   padding: 10px 5px;
   text-align: center;
-  font-size: 14px;
+}
+
+.itemsCell {
+  padding: 2px;
 }
 
 .sm {
-  width: 60px;
+  min-width: 60px;
 }
 
 .md {
-  width: 80px;
+  min-width: 80px;
 }
 
 .lg {
-  width: 120px;
+  width: 150px;
 }

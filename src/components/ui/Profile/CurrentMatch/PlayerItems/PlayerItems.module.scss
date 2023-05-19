@@ -1,54 +1,58 @@
 @import "../../../../../styles/vars.scss";
 
+.item {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .container {
-  display: grid;
+  display: flex;
   align-items: center;
-  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+}
+
+.mainWrapper{
+  display: grid;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-areas:
-    "item0 item1 item2 backpack neutral"
-    "item3 item4 item5 backpack neutral";
+  grid-template-columns: repeat(3, 1fr);
+  margin-right: 2px;
+  gap: 2px;
 }
 
 .backpackWrapper {
   display: flex;
   flex-direction: column;
-  grid-area: backpack;
-}
-
-.item0 {
-  grid-area: item0;
-}
-
-.item1 {
-  grid-area: item1;
-}
-
-.item2 {
-  grid-area: item2;
-}
-
-.item3 {
-  grid-area: item3;
-}
-
-.item4 {
-  grid-area: item4;
-}
-
-.item5 {
-  grid-area: item5;
-}
-
-.item6 {
-  grid-area: item6;
+  margin-right: 2px;
+  gap: 1px;
 }
 
 .neutral {
-  grid-area: neutral;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
+.bgLarge {
+  border-radius: 5px;
+  width: 30px;
+  height: 22px;
+  background-color: $bg;
+}
 
+.bgSmall {
+  border-radius: 5px;
+  width: 20px;
+  height: 14px;
+  background-color: $bg;
+}
 
+.bgRound {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: $bg;
+}
 
 
