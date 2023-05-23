@@ -17,7 +17,7 @@ const Table = ({ team }: Props) => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th className={styles.sm}></th>
+            <th className={styles.xs}></th>
             <th className={styles.sm} title="Kills">
               K
             </th>

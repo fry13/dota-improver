@@ -14,12 +14,16 @@
 
 .cell {
   //border: solid 1px $text;
-  padding: 10px 5px;
+  padding: 5px;
   text-align: center;
 }
 
 .itemsCell {
-  padding: 2px;
+  padding: 5px;
+}
+
+.xs {
+  width: 32px;
 }
 
 .sm {
@@ -31,5 +35,15 @@
 }
 
 .lg {
-  width: 150px;
+  width: 290px;
+}
+
+@media (max-width:1190px) {
+  .itemsCell {
+    padding: 2px;
+  }
+
+  .lg {
+    width: 150px;
+  }
 }
