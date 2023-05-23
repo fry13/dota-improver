@@ -1,13 +1,19 @@
 import Image from "next/image";
 import styles from "./CurrentMatch.module.scss";
-import { GeneralProfile, Hero, Match, MatchDetails, Player } from "@/types";
+import {
+  GeneralProfile,
+  Hero,
+  MatchDetails,
+  Player,
+} from "@/utils/types";
 import { useEffect, useState } from "react";
-import { heroes } from "@/heroes";
+import heroesData from '@/data/heroes.json';
 import MainStats from "./MainStats/MainStats";
 import Header from "./Header/Header";
 import ExpandableBlock from "./ExpandableBlock/ExpandableBlock";
 import Table from "./Table/Table";
-const url = "https://api.opendota.com/api";
+import constants from "@/utils/constants";
+const heroes: Hero[] = Object.values(heroesData);
 
 type Props = {
   user: GeneralProfile;
@@ -21,7 +27,7 @@ const CurrentMatch = ({ user, currentMatchId }: Props) => {
   const [dire, setDire] = useState<Player[]>([]);
 
   const getMatchById = async (matchId: string) => {
-    const detailedMatchRes = await fetch(`${url}/matches/${matchId}`);
+    const detailedMatchRes = await fetch(`${constants.REQURL}/matches/${matchId}`);
     const detailedMatch: MatchDetails = await detailedMatchRes.json();
     return detailedMatch;
   };

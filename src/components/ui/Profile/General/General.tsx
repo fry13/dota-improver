@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./General.module.scss";
-import { GeneralProfile, Match, WinLose } from "@/types";
+import { GeneralProfile, Match, WinLose } from "@/utils/types";
 import Rank from "../Rank/Rank";
 import Socials from "../Socials/Socials";
 import FavHeroes from "../FavHeroes/FavHeroes";

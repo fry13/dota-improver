@@ -1,8 +1,9 @@
 import Image from "next/image";
 import styles from "./PlayerItems.module.scss";
-import { Hero, Player } from "@/types";
-import { heroes } from "@/heroes";
-import { items } from "@/items";
+import { Item, Player } from "@/utils/types";
+import constants from "@/utils/constants";
+import itemsData from "@/data/items.json";
+const items: Item[] = Object.values(itemsData);
 
 type Props = {
   player: Player;
@@ -42,12 +43,12 @@ const PlayerItems = ({ player }: Props) => {
             return (
               <Image
                 key={index}
-                src={item!.img}
+                src={constants.CDNURL + item!.img}
                 width={30}
                 height={22}
                 className={styles.item}
-                title={item!.name}
-                alt={item!.name}
+                title={item!.dname ? item!.dname : ""}
+                alt={item!.dname ? item!.dname : ""}
               />
             );
           } else {
@@ -61,12 +62,12 @@ const PlayerItems = ({ player }: Props) => {
             return (
               <Image
                 key={index}
-                src={item!.img}
+                src={constants.CDNURL + item!.img}
                 width={20}
                 height={14}
                 className={styles.item}
-                title={item!.name}
-                alt={item!.name}
+                title={item!.dname ? item!.dname : ""}
+                alt={item!.dname ? item!.dname : ""}
               />
             );
           } else {
@@ -76,12 +77,14 @@ const PlayerItems = ({ player }: Props) => {
       </div>
       {finallyItems.neutralItem ? (
         <Image
-          src={finallyItems.neutralItem.img}
+          src={constants.CDNURL + finallyItems.neutralItem.img}
           width={44}
           height={32}
           className={styles.neutral}
-          title={finallyItems.neutralItem.name}
-          alt={finallyItems.neutralItem.name}
+          title={finallyItems.neutralItem.dname}
+          alt={
+            finallyItems.neutralItem.dname ? finallyItems.neutralItem.dname : ""
+          }
         />
       ) : (
         <div className={styles.bgRound}></div>

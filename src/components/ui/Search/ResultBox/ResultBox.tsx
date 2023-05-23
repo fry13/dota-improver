@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./ResultBox.module.scss";
-import { User } from "@/types";
+import { User } from "@/utils/types";
 import ResultItem from "../ResultItem/ResultItem";
 
 type Props = {

@@ -1,8 +1,11 @@
 import Image from "next/image";
 import styles from "./Header.module.scss";
-import { Hero, Match, MatchDetails, Player } from "@/types";
-import { heroes } from "@/heroes";
-import { copyToClipboard, matchDurationCalc } from "@/utils";
+import { Hero, Match, MatchDetails, Player } from "@/utils/types";
+import heroesData from "@/data/heroes.json"
+import { copyToClipboard, matchDurationCalc } from "@/utils/utils";
+import constants from "@/utils/constants";
+const heroes = Object.values(heroesData)
+
 
 type Props = {
   match: MatchDetails;
@@ -25,7 +28,7 @@ const Header = ({ match, matchResult, radiant, dire }: Props) => {
           return (
             <Image
               key={hero!.id}
-              src={hero!.icon}
+              src={constants.CDNURL+hero!.icon}
               width={32}
               height={32}
               title={hero!.localized_name}
@@ -39,7 +42,7 @@ const Header = ({ match, matchResult, radiant, dire }: Props) => {
           return (
             <Image
               key={hero!.id}
-              src={hero!.icon}
+              src={constants.CDNURL+hero!.icon}
               width={32}
               height={32}
               title={hero!.localized_name}
@@ -55,8 +58,6 @@ const Header = ({ match, matchResult, radiant, dire }: Props) => {
       >
         {match.match_id}
       </p>
-
-      
     </header>
   );
 };

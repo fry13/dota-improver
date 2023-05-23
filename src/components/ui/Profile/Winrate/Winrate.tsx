@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./Winrate.module.scss";
-import { FavHero, Match, WinLose } from "@/types";
-import { wlCalc } from "@/utils";
+import { FavHero, Match, WinLose } from "@/utils/types";
+import { wlCalc } from "@/utils/utils";
 import { useEffect, useState } from "react";
 
 type Props = {

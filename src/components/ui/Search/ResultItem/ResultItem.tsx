@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./ResultItem.module.scss";
-import { User } from "@/types";
-import { lastMatchCalc } from "@/utils";
+import { User } from "@/utils/types";
+import { lastMatchCalc } from "@/utils/utils";
 import Link from "next/link";
 
 type Props = {

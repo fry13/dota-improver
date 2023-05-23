@@ -1,11 +1,11 @@
 import SearchBox from "./SearchBox/SearchBox";
 import SearchButton from "./SearchButton/SearchButton";
 import styles from "./Search.module.scss";
-import { User } from "../../../types";
+import { User } from "../../../utils/types";
 import { useState } from "react";
 import ResultBox from "./ResultBox/ResultBox";
 import Preloader from "../Preloader/Preloader";
-const url = "https://api.opendota.com/api";
+import constants from "@/utils/constants";
 
 const Search = () => {
   const [searchRequest, setSearchRequest] = useState<string>("");
@@ -15,7 +15,7 @@ const Search = () => {
   const getUsers = async (request: string) => {
     if (request.length > 2) {
       setPreloader(true);
-      const res = await fetch(`${url}/search?q=${request}`);
+      const res = await fetch(`${constants.REQURL}/search?q=${request}`);
       const data: User[] = await res.json();
       let filteredData: User[] = [];
       data.forEach((user) => {

@@ -1,6 +1,12 @@
 import Image from "next/image";
 import styles from "./Profile.module.scss";
-import { GeneralProfile, Match, MatchDetails, User, WinLose } from "@/types";
+import {
+  GeneralProfile,
+  Match,
+  MatchDetails,
+  User,
+  WinLose,
+} from "@/utils/types";
 import General from "./General/General";
 import Block from "../Block/Block";
 import Matches from "./Matches/Matches";
@@ -31,10 +37,7 @@ const Profile = ({ profile, matches, wl }: Props) => {
         <Matches profile={profile} data={matches} clickHandler={setMatch} />
       </Block>
       <Block area="selected" name="Selected match">
-        <CurrentMatch
-          user={profile}
-          currentMatchId={currentMatchId}
-        />
+        <CurrentMatch user={profile} currentMatchId={currentMatchId} />
       </Block>
     </div>
   );

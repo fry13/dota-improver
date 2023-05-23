@@ -1,8 +1,11 @@
 import Image from "next/image";
 import styles from "./Table.module.scss";
-import { Hero, Player } from "@/types";
-import { heroes } from "@/heroes";
+import { Hero, Player } from "@/utils/types";
 import PlayerItems from "../PlayerItems/PlayerItems";
+import constants from "@/utils/constants";
+import heroesData from "@/data/heroes.json"
+const heroes: Hero[] = Object.values(heroesData);
+
 
 type Props = {
   team: Player[];
@@ -14,19 +17,43 @@ const Table = ({ team }: Props) => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th className={styles.sm} ></th>
-            <th className={styles.sm} title="Kills">K</th>
-            <th className={styles.sm}  title="Deaths">D</th>
-            <th className={styles.sm}  title="Assists">A</th>
-            <th className={styles.md} title="Net worth">NET</th>
-            <th className={styles.sm} title="Last hits">LH</th>
-            <th className={styles.sm} title="Denies">DN</th>
-            <th className={styles.sm} title="Gold per minute">GPM</th>
-            <th className={styles.sm} title="Experience per minute">XPM</th>
-            <th className={styles.md} title="Damage to heroes">DMG</th>
-            <th className={styles.md} title="Heal to heroes">HEAL</th>
-            <th className={styles.md} title="Building damage">BLD</th>
-            <th className={styles.lg} title="Items at the end of the match">Items</th>
+            <th className={styles.sm}></th>
+            <th className={styles.sm} title="Kills">
+              K
+            </th>
+            <th className={styles.sm} title="Deaths">
+              D
+            </th>
+            <th className={styles.sm} title="Assists">
+              A
+            </th>
+            <th className={styles.md} title="Net worth">
+              NET
+            </th>
+            <th className={styles.sm} title="Last hits">
+              LH
+            </th>
+            <th className={styles.sm} title="Denies">
+              DN
+            </th>
+            <th className={styles.sm} title="Gold per minute">
+              GPM
+            </th>
+            <th className={styles.sm} title="Experience per minute">
+              XPM
+            </th>
+            <th className={styles.md} title="Damage to heroes">
+              DMG
+            </th>
+            <th className={styles.md} title="Heal to heroes">
+              HEAL
+            </th>
+            <th className={styles.md} title="Building damage">
+              BLD
+            </th>
+            <th className={styles.lg} title="Items at the end of the match">
+              Items
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -36,7 +63,7 @@ const Table = ({ team }: Props) => {
               <tr className={styles.row} key={player.hero_id}>
                 <td className={styles.cell}>
                   <Image
-                    src={hero!.icon}
+                    src={constants.CDNURL+hero!.icon}
                     width={32}
                     height={32}
                     title={hero!.localized_name}
@@ -54,7 +81,9 @@ const Table = ({ team }: Props) => {
                 <td className={styles.cell}>{player.hero_damage}</td>
                 <td className={styles.cell}>{player.hero_healing}</td>
                 <td className={styles.cell}>{player.tower_damage}</td>
-                <td className={styles.itemsCell}><PlayerItems player={player} /></td>
+                <td className={styles.itemsCell}>
+                  <PlayerItems player={player} />
+                </td>
               </tr>
             );
           })}

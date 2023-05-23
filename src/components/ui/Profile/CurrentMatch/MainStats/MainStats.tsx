@@ -1,7 +1,9 @@
 import Image from "next/image";
 import styles from "./MainStats.module.scss";
-import { Hero, Player } from "@/types";
-import { heroes } from "@/heroes";
+import { Hero, Player } from "@/utils/types";
+import constants from "@/utils/constants";
+import heroesData from '@/data/heroes.json';
+const heroes = Object.values(heroesData);
 
 type Props = {
   player: Player;
@@ -16,7 +18,7 @@ const MainStats = ({ player }: Props) => {
       <div className={styles.container}>
         <div>
           <Image
-            src={hero.icon}
+            src={constants.CDNURL+hero.icon}
             width={40}
             height={40}
             alt={hero.localized_name}

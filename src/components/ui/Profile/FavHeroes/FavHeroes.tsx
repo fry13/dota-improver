@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./FavHeroes.module.scss";
-import { FavHero, Match } from "@/types";
-import { wlCalc } from "@/utils";
+import { FavHero, Match } from "@/utils/types";
+import { wlCalc } from "@/utils/utils";
 import HeroItem from "./HeroItem/HeroItem";
 import { useEffect, useState } from "react";
 
